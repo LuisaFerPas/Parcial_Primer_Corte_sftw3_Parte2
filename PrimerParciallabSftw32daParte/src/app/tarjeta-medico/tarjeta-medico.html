@@ -1,0 +1,28 @@
+<div class="card h-100">
+
+  <div class="tarjeta-medico__imagen-contenedor">
+    <img [src]="medico.imagen" class="card-img-top"
+      [alt]="medico.nombre + ' ' + medico.apellido">
+  </div>
+
+  <div class="card-body">
+
+    <h5 class="card-title">
+      {{ medico.nombre }} {{ medico.apellido }}
+    </h5>
+
+    <p class="card-text">
+      <strong>Especialidad:</strong><br>
+      {{ medico.especialidad }}
+    </p>
+
+    <p class="card-text">
+      <em>"{{ medico.motivacion }}"</em>
+    </p>
+
+    <button class="btn btn-primary btn-sm">
+      Agendar Cita
+    </button>
+
+  </div>
+</div>

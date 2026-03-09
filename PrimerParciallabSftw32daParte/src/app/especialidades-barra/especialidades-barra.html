@@ -1,0 +1,22 @@
+<section class="especialidades-barra">
+  <div class="especialidades-barra__card card">
+    <div class="card-header bg-primary text-white ">
+      <h5 class="mb-0">{{title}}</h5>
+    </div>
+    <ul class="list-group list-group-flush" id="lista-especialidades">
+      <!-- Usamos *ngFor para iterar sobre las especialidades de man era más eficiente -->
+      <li *ngFor="let item of especialidades | keyvalue" 
+          class="list-group-item elemento-especialidad" 
+          [class.active]="selectedEspecialidad === item.key"
+          (click)="selectEspecialidad(item.key)">
+        <a href="#" class="text-decoration-none" (click)="$event.preventDefault()">{{ item.value.nombre }}</a>
+      </li>
+    </ul>
+
+    <!-- Descripción de especialidad dentro de la tarjeta - SIEMPRE VISIBLE -->
+    <div id="descEspecialidad" class="card-body border-top">
+      <h5 id="nombreEspecialidad" class="card-title">{{ especialidades[selectedEspecialidad]?.nombre || 'Selecciona una especialidad' }}</h5>
+      <p id="textoEspecialidad" class="card-text">{{ especialidades[selectedEspecialidad]?.descripcion || 'Haz clic en una especialidad para ver su descripción' }}</p>
+    </div>
+  </div>
+</section>

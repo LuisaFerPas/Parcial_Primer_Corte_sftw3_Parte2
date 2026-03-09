@@ -1,0 +1,48 @@
+/* Estilos específicos para el footer */
+footer {
+  width: 100%;
+  margin-top: auto; /* Útil para mantener el footer abajo en layouts flexbox */
+}
+
+footer a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+/* Estilos para los iconos de redes sociales */
+footer .fab {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+footer .fab:hover {
+  transform: translateY(-3px);
+}
+
+/* Para asegurar que el footer siempre esté al fondo */
+:host {
+  display: block;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  footer {
+    text-align: center;
+  }
+  
+  footer .col-lg-4,
+  footer .col-lg-3 {
+    margin-bottom: 2rem;
+  }
+  
+  footer .fab {
+    font-size: 2rem;
+    margin: 0 10px;
+  }
+}

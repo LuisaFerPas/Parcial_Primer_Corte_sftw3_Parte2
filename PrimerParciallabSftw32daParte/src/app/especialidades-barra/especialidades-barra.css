@@ -1,0 +1,92 @@
+/* ================================
+   BARRA DE ESPECIALIDADES
+   ================================ */
+
+.especialidades-barra {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.especialidades-barra__card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#lista-especialidades {
+  max-height: 350px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.list-group-item {
+  border-left: 4px solid #233460;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 0.95rem;
+}
+
+.list-group-item a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.list-group-item:hover,
+.list-group-item:hover a {
+  text-decoration: underline;
+}
+
+.list-group-item.active {
+  background-color: #213754;
+  border-left-color: #ffffff;
+  font-weight: 600;
+  color: white;
+}
+
+.list-group-item.active a {
+  color: white;
+}
+
+.elemento-especialidad {
+  transition: all 0.3s;
+}
+
+/* Descripción de especialidades */
+#descEspecialidad {
+  margin-top: 10px; /* Reduje el margen superior */
+  max-height: 250px;
+  animation: slideIn 0.3s ease-in-out;
+  overflow-y: auto;
+  background-color: #aed0f3;
+  border-radius: 0 0 4px 4px;
+  padding: 15px;
+  /* Eliminamos display:none porque ahora siempre se muestra */
+}
+
+#descEspecialidad h5 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #351469;
+}
+
+#descEspecialidad p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #1f1a1a;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

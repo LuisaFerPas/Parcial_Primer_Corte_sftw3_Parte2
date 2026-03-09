@@ -1,0 +1,154 @@
+<div class="container-fluid text-center" id="registro">
+  <hr>
+  <h2 class="text-center mb-4">Formulario para el Registro de una nueva cuenta</h2>
+  <p class="lead mb-4">
+    Complete los datos para crear su cuenta.
+  </p>
+  
+  <!-- Usamos (ngSubmit) en lugar de onsubmit -->
+  <form id="formularioContacto" (ngSubmit)="validarFormulario()" #registroForm="ngForm">
+
+    <div class="mb-4">
+      <label for="identificacion" class="form-label">Tipo de Identificación:</label>
+      <select 
+        id="identificacion" 
+        name="tipoIdentificacion" 
+        class="form-select form-control"
+        [(ngModel)]="formData.tipoIdentificacion"
+        #tipoIdentificacion="ngModel"
+        (blur)="validarCampoAlCambiarFoco('tipoIdentificacion')">
+        <option value="" disabled selected>Seleccione un tipo de identificación</option>
+        <option value="cc">Cédula de Ciudadanía</option>
+        <option value="ti">Tarjeta de Identidad</option>
+        <option value="ce">Cédula de Extranjería</option>
+        <option value="pas">Pasaporte</option>
+      </select>
+      <div class="text-danger form-text" *ngIf="errores.tipoIdentificacion">
+        {{ errores.tipoIdentificacion }}
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="numero-identificacion" class="form-label">Número de Identificación:</label>
+      <input 
+        type="text" 
+        id="numero-identificacion" 
+        name="numeroIdentificacion" 
+        class="form-control"
+        placeholder="Número de identificación"
+        [(ngModel)]="formData.numeroIdentificacion"
+        #numeroIdentificacion="ngModel"
+        (blur)="validarCampoAlCambiarFoco('numeroIdentificacion')">
+      <div class="text-danger form-text" *ngIf="errores.numeroIdentificacion">
+        {{ errores.numeroIdentificacion }}
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="nombres" class="form-label">Nombres:</label>
+      <input 
+        type="text" 
+        id="nombres" 
+        name="nombres" 
+        class="form-control" 
+        placeholder="Nombres del usuario"
+        [(ngModel)]="formData.nombres"
+        #nombres="ngModel"
+        (blur)="validarCampoAlCambiarFoco('nombres')">
+      <div class="text-danger form-text" *ngIf="errores.nombres">
+        {{ errores.nombres }}
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="apellidos" class="form-label">Apellidos:</label>
+      <input 
+        type="text" 
+        id="apellidos" 
+        name="apellidos" 
+        class="form-control" 
+        placeholder="Apellidos del usuario"
+        [(ngModel)]="formData.apellidos"
+        #apellidos="ngModel"
+        (blur)="validarCampoAlCambiarFoco('apellidos')">
+      <div class="text-danger form-text" *ngIf="errores.apellidos">
+        {{ errores.apellidos }}
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="correo-electronico" class="form-label">Correo Electrónico:</label>
+      <input 
+        type="email" 
+        id="correo-electronico" 
+        name="correoElectronico" 
+        class="form-control"
+        placeholder="ejemploCorreo@gmail.com"
+        [(ngModel)]="formData.correoElectronico"
+        #correoElectronico="ngModel"
+        (blur)="validarCampoAlCambiarFoco('correoElectronico')">
+      <div class="text-danger form-text" *ngIf="errores.correoElectronico">
+        {{ errores.correoElectronico }}
+      </div>
+    </div>
+
+    <fieldset class="mb-4">
+      <legend class="form-label">Género:</legend>
+      <div class="form-check form-check-inline">
+        <input 
+          class="form-check-input" 
+          type="radio" 
+          id="femenino" 
+          name="genero" 
+          value="femenino"
+          [(ngModel)]="formData.genero"
+          (blur)="validarCampoAlCambiarFoco('genero')">
+        <label class="form-check-label" for="femenino">Femenino</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input 
+          class="form-check-input" 
+          type="radio" 
+          id="masculino" 
+          name="genero" 
+          value="masculino"
+          [(ngModel)]="formData.genero"
+          (blur)="validarCampoAlCambiarFoco('genero')">
+        <label class="form-check-label" for="masculino">Masculino</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input 
+          class="form-check-input" 
+          type="radio" 
+          id="otro" 
+          name="genero" 
+          value="otro"
+          [(ngModel)]="formData.genero"
+          (blur)="validarCampoAlCambiarFoco('genero')">
+        <label class="form-check-label" for="otro">Otro</label>
+      </div>
+      <div class="text-danger form-text" *ngIf="errores.genero">
+        {{ errores.genero }}
+      </div>
+    </fieldset>
+
+    <div class="mb-3">
+      <label for="fecha-nacimiento" class="form-label">Fecha de Nacimiento:</label>
+      <input 
+        type="date" 
+        id="fecha-nacimiento" 
+        name="fechaNacimiento" 
+        class="form-control"
+        [(ngModel)]="formData.fechaNacimiento"
+        #fechaNacimiento="ngModel"
+        (blur)="validarCampoAlCambiarFoco('fechaNacimiento')">
+      <div class="text-danger form-text" *ngIf="errores.fechaNacimiento">
+        {{ errores.fechaNacimiento }}
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-start">
+      <button type="submit" id="btnRegistrar" class="btn btn-primary w-100">Registrar</button>
+    </div>
+  </form>
+</div>
