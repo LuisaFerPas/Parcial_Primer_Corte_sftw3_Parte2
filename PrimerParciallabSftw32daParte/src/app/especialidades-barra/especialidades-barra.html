@@ -4,7 +4,7 @@
       <h5 class="mb-0">{{title}}</h5>
     </div>
     <ul class="list-group list-group-flush" id="lista-especialidades">
-      <!-- Usamos *ngFor para iterar sobre las especialidades de man era más eficiente -->
+      <!-- Usamos *ngFor para iterar sobre las especialidades y no hacer la lista completa -->
       <li *ngFor="let item of especialidades | keyvalue" 
           class="list-group-item elemento-especialidad" 
           [class.active]="selectedEspecialidad === item.key"
@@ -13,7 +13,7 @@
       </li>
     </ul>
 
-    <!-- Descripción de especialidad dentro de la tarjeta - SIEMPRE VISIBLE -->
+    <!-- Descripción de especialidad dentro de la tarjeta -->
     <div id="descEspecialidad" class="card-body border-top">
       <h5 id="nombreEspecialidad" class="card-title">{{ especialidades[selectedEspecialidad]?.nombre || 'Selecciona una especialidad' }}</h5>
       <p id="textoEspecialidad" class="card-text">{{ especialidades[selectedEspecialidad]?.descripcion || 'Haz clic en una especialidad para ver su descripción' }}</p>

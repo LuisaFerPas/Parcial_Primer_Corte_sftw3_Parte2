@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Necesario para *ngFor y keyvalue
+import { CommonModule } from '@angular/common'; //voy a probar usar ngIf y ngFor
 
+//para facilitar 
 interface Especialidad {
   nombre: string;
   descripcion: string;
@@ -16,7 +17,7 @@ interface Especialidad {
 export class EspecialidadesBarra {
   title: string = 'Especialidades Médicas';
 
-  // Inicializa directamente con todas las especialidades
+  // Info de todas las especialidades
   public especialidades: Record<string, Especialidad> = {
     cardiologia: {
       nombre: "Cardiología",
@@ -52,10 +53,10 @@ export class EspecialidadesBarra {
     }
   };
 
-  // Propiedad que mantiene la especialidad activa
+  // Propiedad para mantener la especialidad activa
   selectedEspecialidad: string = 'todas';
 
-  // Método para seleccionar especialidad
+  // con este selecciono la especialidad 
   selectEspecialidad(key: string) {
     this.selectedEspecialidad = key;
     console.log('Especialidad seleccionada:', key); 

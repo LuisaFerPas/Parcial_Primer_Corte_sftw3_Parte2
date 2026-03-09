@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Carrusel {
 
+  public tituloBienvenida: string = 'Bienvenido a Nuestra Clínica de Medicina Alternativa';
+  public textoBienvenida: string = 'En Clínica Piedra Azul, nos dedicamos a ofrecer servicios de medicina alternativa para mejorar tu salud y bienestar. Nuestro equipo de profesionales altamente capacitados está comprometido en brindarte atención personalizada y tratamientos efectivos.';
+
   public title: string = 'Promociones Destacadas';
   public images: string[] = [
     'https://images.pexels.com/photos/4353249/pexels-photo-4353249.jpeg',

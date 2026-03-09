@@ -1,7 +1,7 @@
 <footer class="bg-dark text-white text-center text-lg-start mt-5" id="contacto">
   <div class="container p-4">
-    <div class="row">
-      <div class="col-lg-4 col-md-12 mb-4">
+    <div class="row ">
+      <div class="col-lg-3 col-md-12 mb-4">
         <h5 class="text-uppercase mb-3">Clínica Piedra Azul</h5>
         <p>Tu salud es nuestra prioridad.</p>
       </div>
@@ -21,10 +21,15 @@
         <a href="#" class="text-white me-3"><i class="fab fa-whatsapp"></i></a>
         <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
       </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 ">
+        <h5 class="text-uppercase mb-3 ">Dirección</h5>
+        <p>{{ direccion }}</p>
+      </div>
     </div>
   </div>
 
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2026 Clínica Piedra Azul. Todos los derechos reservados.
+    © {{ anioActual }} Clínica Piedra Azul. Todos los derechos reservados.
   </div>
 </footer>

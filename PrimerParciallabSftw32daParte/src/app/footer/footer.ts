@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   
-  anioActual: number = new Date().getFullYear(); 
+  public anioActual: number = new Date().getFullYear(); 
+  public direccion: string = 'CCHJ+68, Popayán, Cauca (Via al Huila)';
   
 }

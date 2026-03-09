@@ -54,16 +54,14 @@
   transition: all 0.3s;
 }
 
-/* Descripción de especialidades */
 #descEspecialidad {
-  margin-top: 10px; /* Reduje el margen superior */
+  margin-top: 10px; 
   max-height: 250px;
   animation: slideIn 0.3s ease-in-out;
   overflow-y: auto;
   background-color: #aed0f3;
   border-radius: 0 0 4px 4px;
   padding: 15px;
-  /* Eliminamos display:none porque ahora siempre se muestra */
 }
 
 #descEspecialidad h5 {
